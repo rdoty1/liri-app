@@ -1,13 +1,21 @@
 // DEPENDENCIES
 // =====================================
+
 // Read and set environment variables
+// Read and set environment variables
+require("dotenv").config();
 
 
 // Import the node-spotify-api NPM package.
 var Spotify = require("node-spotify-api");
+// Import the API keys
+var keys = require("./keys");
+
 
 // Import the axios npm package.
 var axios = require("axios");
+
+var chalk = require("chalk")
 
 // Import the moment npm package.
 var moment = require("moment");
@@ -16,10 +24,10 @@ var moment = require("moment");
 var fs = require("fs");
 
 // Initialize the spotify API client using our client id and secret
-var spotify = new Spotify({
-    id: "26c4ec15bab24451a5a523d93eedfffe",
-    secret: "0d06e8fb1c8e493da1b6d383c700fd5a"
-});
+var spotify = new Spotify(keys.spotify)
+    // id: "26c4ec15bab24451a5a523d93eedfffe",
+    // secret: "0d06e8fb1c8e493da1b6d383c700fd5a"
+;
 // FUNCTIONS
 // =====================================
 
